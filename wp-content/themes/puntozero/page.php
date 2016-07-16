@@ -7,7 +7,7 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
+ * @subpackage Puntozero
  * @since Twenty Sixteen 1.0
  */
 

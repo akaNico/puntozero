@@ -3,8 +3,8 @@
  * The template for displaying search results pages
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Puntozero
+ * @since Puntozero 1.0
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'puntozero' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php
@@ -34,9 +34,9 @@ get_header(); ?>
 
 			// Previous/next page navigation.
 			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+				'prev_text'          => __( 'Previous page', 'puntozero' ),
+				'next_text'          => __( 'Next page', 'puntozero' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'puntozero' ) . ' </span>',
 			) );
 
 		// If no content, include the "No posts found" template.

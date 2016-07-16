@@ -10,7 +10,7 @@
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
+ * @subpackage Puntozero
  * @since Twenty Sixteen 1.0
  */
 
@@ -43,9 +43,9 @@ get_header(); ?>
 
 			// Previous/next page navigation.
 			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+				'prev_text'          => __( 'Previous page', 'puntozero' ),
+				'next_text'          => __( 'Next page', 'puntozero' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'puntozero' ) . ' </span>',
 			) );
 
 		// If no content, include the "No posts found" template.

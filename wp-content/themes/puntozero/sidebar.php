@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @since Puntozero 1.0
  */
 ?>
 
