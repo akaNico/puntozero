@@ -1,112 +1,78 @@
 <?php
 /**
- * The template for displaying image attachments
+ * The WordPress template hierarchy first checks for any
+ * MIME-types and then looks for the attachment.php file.
  *
- * @package WordPress
- * @subpackage Puntozero
- * @since Twenty Sixteen 1.0
+ * @link codex.wordpress.org/Template_Hierarchy#Attachment_display
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="content" class="row">
 
-			<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
-			?>
+	<div id="main" class="<?php puntozero_main_classes(); ?>" role="main">
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<nav id="image-navigation" class="navigation image-navigation">
-						<div class="nav-links">
-							<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'puntozero' ) ); ?></div>
-							<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'puntozero' ) ); ?></div>
-						</div><!-- .nav-links -->
-					</nav><!-- .image-navigation -->
+		<article id="post-<?php the_ID(); ?>" <?php post_class("block"); ?> role="article">
 
-					<header class="entry-header">
-						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					</header><!-- .entry-header -->
+			<header>
 
-					<div class="entry-content">
+				<div class="article-header"><h1 itemprop="headline"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo esc_html(get_the_title($post->post_parent)); ?></a> &raquo; <?php the_title(); ?></h1></div>
 
-						<div class="entry-attachment">
-							<?php
-								/**
-								 * Filter the default puntozero image attachment size.
-								 *
-								 * @since Twenty Sixteen 1.0
-								 *
-								 * @param string $image_size Image size. Default 'large'.
-								 */
-								$image_size = apply_filters( 'puntozero_attachment_size', 'large' );
 
-								echo wp_get_attachment_image( get_the_ID(), $image_size );
-							?>
+				<?php puntozero_display_post_meta() ?>
 
-							<?php puntozero_excerpt( 'entry-caption' ); ?>
+			</header>
 
-						</div><!-- .entry-attachment -->
+			<section class="post_content" itemprop="articleBody">
 
-						<?php
-							the_content();
-							wp_link_pages( array(
-								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puntozero' ) . '</span>',
-								'after'       => '</div>',
-								'link_before' => '<span>',
-								'link_after'  => '</span>',
-								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'puntozero' ) . ' </span>%',
-								'separator'   => '<span class="screen-reader-text">, </span>',
-							) );
-						?>
-					</div><!-- .entry-content -->
+				<!-- To display current image in the photo gallery -->
+				<div class="attachment-img">
+				      <a href="<?php echo wp_get_attachment_url($post->ID); ?>">
 
-					<footer class="entry-footer">
-						<?php puntozero_entry_meta(); ?>
-						<?php
-							// Retrieve attachment metadata.
-							$metadata = wp_get_attachment_metadata();
-							if ( $metadata ) {
-								printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-									esc_html_x( 'Full size', 'Used before full size attachment link.', 'puntozero' ),
-									esc_url( wp_get_attachment_url() ),
-									absint( $metadata['width'] ),
-									absint( $metadata['height'] )
-								);
-							}
-						?>
-						<?php
-							edit_post_link(
-								sprintf(
-									/* translators: %s: Name of current post */
-									__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'puntozero' ),
-									get_the_title()
-								),
-								'<span class="edit-link">',
-								'</span>'
-							);
-						?>
-					</footer><!-- .entry-footer -->
-				</article><!-- #post-## -->
+				      <?php
+				      	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+					      if ($image) : ?>
+					          <img src="<?php echo $image[0]; ?>" alt="" />
+					      <?php endif; ?>
 
-					// Parent post navigation.
-					the_post_navigation( array(
-						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'puntozero' ),
-					) );
-				// End the loop.
-				endwhile;
-			?>
+				      </a>
+				</div>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+			</section>
 
-<?php get_sidebar(); ?>
+			<footer>
+				<?php the_tags('<p class="tags">', ' ', '</p>'); ?>
+			</footer>
+
+			<nav>
+			  	<ul class="pager">
+			    	<li class="previous"><?php next_image_link( false, __( '&laquo; Previous', "puntozero")); ?></li>
+			    	<li class="next"><?php previous_image_link( false, __( 'Next &raquo;', "puntozero")); ?></li>
+			  	</ul>
+			</nav>
+
+		</article>
+
+		<?php comments_template(); ?>
+
+		<?php endwhile; ?>
+
+		<?php else : ?>
+
+		<article id="post-not-found" class="block">
+		    <p><?php _e("No items found.", "puntozero"); ?></p>
+		</article>
+
+		<?php endif; ?>
+
+	</div>
+
+	<?php get_sidebar("left"); ?>
+	<?php get_sidebar("right"); ?>
+
+</div>
+
 <?php get_footer(); ?>

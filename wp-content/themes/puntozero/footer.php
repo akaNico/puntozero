@@ -1,59 +1,24 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after
- *
- * @package WordPress
- * @subpackage Puntozero
- * @since Puntozero 1.0
- */
-?>
 
-		</div><!-- .site-content -->
+    	   </div>
+        </div>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'puntozero' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
+        <footer>
+            <div id="inner-footer" class="vertical-nav">
+                <div class="container">
+                    <div class="row">
+                        <?php dynamic_sidebar('footer1'); ?>
+                        <div class="col-xs-12 text-center">
+                            <p>Copyright 2016 - <a href="http://www.puntozeroint.com">www.puntozeroint.com</a> - All rights riserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'puntozero' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-							'menu_class'     => 'social-links-menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-						) );
-					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+    </div>
 
-			<div class="site-info">
-				<?php
-					/**
-					 * Fires before the puntozero footer text for footer customization.
-					 *
-					 * @since Puntozero 1.0
-					 */
-					do_action( 'puntozero_credits' );
-				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'puntozero' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'puntozero' ), 'WordPress' ); ?></a>
-			</div><!-- .site-info -->
-		</footer><!-- .site-footer -->
-	</div><!-- .site-inner -->
-</div><!-- .site -->
+	<?php wp_footer(); // js scripts are inserted using this function ?>
 
-<?php wp_footer(); ?>
 </body>
+
 </html>

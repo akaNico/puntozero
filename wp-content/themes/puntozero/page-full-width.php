@@ -1,14 +1,20 @@
+<?php
+/*
+Template Name: Full Width Page
+*/
+?>
+
 <?php get_header(); ?>
 
 <div id="content" class="row">
 
-	<div id="main" class="<?php puntozero_main_classes(); ?>" role="main">
+	<div id="main" class="col-lg-12" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<?php puntozero_display_post(false); ?>
 
-		<?php comments_template('',true); ?>
+		<?php comments_template(); ?>
 
 		<?php endwhile; ?>
 
@@ -21,9 +27,6 @@
 		<?php endif; ?>
 
 	</div>
-
-	<?php get_sidebar("left"); ?>
-	<?php get_sidebar("right"); ?>
 
 </div>
 

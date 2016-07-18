@@ -1,54 +1,39 @@
-<?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- * @subpackage Puntozero
- * @since Puntozero 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="content" class="row">
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+	<div id="main" class="<?php puntozero_main_classes(); ?>" role="main">
 
-			// Include the single post content template.
-			get_template_part( 'template-parts/content', 'single' );
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
+		<?php puntozero_display_post(false); ?>
 
-			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation.
-				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
-				) );
-			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
-				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-				) );
-			}
+		<?php comments_template('',true); ?>
 
-			// End of the loop.
-		endwhile;
-		?>
+		<?php if (get_next_post() || get_previous_post()) { ?>
+		<nav class="block">
+			<ul class="pager pager-unspaced">
+				<li class="previous"><?php previous_post_link('%link', "&laquo; " . __( 'Previous Post', "puntozero")); ?></li>
+				<li class="next"><?php next_post_link('%link', __( 'Next Post', "puntozero") . " &raquo;"); ?></li>
+			</ul>
+		</nav>
+		<?php } ?>
 
-	</main><!-- .site-main -->
+		<?php endwhile; ?>
 
-	<?php get_sidebar( 'content-bottom' ); ?>
+		<?php else : ?>
 
-</div><!-- .content-area -->
+		<article id="post-not-found" class="block">
+		    <p><?php _e("No posts found.", "puntozero"); ?></p>
+		</article>
 
-<?php get_sidebar(); ?>
+		<?php endif; ?>
+
+	</div>
+
+	<?php get_sidebar("left"); ?>
+	<?php get_sidebar("right"); ?>
+
+</div>
+
 <?php get_footer(); ?>

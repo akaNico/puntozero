@@ -1,79 +1,46 @@
 <?php
-/**
- * The template for displaying comments
- *
- * The area of the page that contains both current comments
- * and the comment form.
- *
- * @package WordPress
- * @subpackage Puntozero
- * @since Puntozero 1.0
- */
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
-	return;
-}
+	if ( post_password_required() ) { ?>
+		<div id="comments" class="block">
+			<?php _e("This post is password protected. Enter the password to view comments.", "puntozero"); ?>
+		</div>
+		<?php
+		return;
+	}
 ?>
 
-<div id="comments" class="comments-area">
+<?php if ( have_comments() || comments_open() ) : ?>
 
-	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				$comments_number = get_comments_number();
-				if ( 1 === $comments_number ) {
-					/* translators: %s: post title */
-					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'puntozero' ), get_the_title() );
-				} else {
-					printf(
-						/* translators: 1: number of comments, 2: post title */
-						_nx(
-							'%1$s thought on &ldquo;%2$s&rdquo;',
-							'%1$s thoughts on &ldquo;%2$s&rdquo;',
-							$comments_number,
-							'comments title',
-							'puntozero'
-						),
-						number_format_i18n( $comments_number ),
-						get_the_title()
-					);
-				}
-			?>
-		</h2>
+<div id="comments" class="block">
 
-		<?php the_comments_navigation(); ?>
+<?php if ( have_comments() ) : ?>
+	<h3><?php echo __("Comments", "puntozero")?></h3>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 42,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+	<ol class="commentlist">
+		<?php wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+				'avatar_size'=> 34,
+			) ); ?>
+	</ol>
 
-		<?php the_comments_navigation(); ?>
-
-	<?php endif; // Check for have_comments(). ?>
-
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'puntozero' ); ?></p>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<ul id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+		<ul class="pager">
+			<li class="previous"><?php previous_comments_link( __("&laquo; Older Comments", "puntozero") ); ?></li>
+			<li class="next"><?php next_comments_link( __("Newer Comments &raquo;", "puntozero") ); ?></li>
+		</ul>
+	</ul>
 	<?php endif; ?>
 
-	<?php
-		comment_form( array(
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h2>',
-		) );
-	?>
+<?php endif; ?>
 
-</div><!-- .comments-area -->
+<?php if ( comments_open() ) : ?>
+
+	<?php comment_form(); ?>
+
+<?php endif; // if you delete this the sky will fall on your head ?>
+
+</div>
+
+<?php endif; ?>

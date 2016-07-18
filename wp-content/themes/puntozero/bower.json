@@ -1,0 +1,21 @@
+{
+  "name": "puntozero",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mentalernie/puntozero",
+  "authors": [
+    "mentalernie"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.2"
+  }
+}

@@ -1,65 +1,38 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Puntozero
- * @since Puntozero 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="content" class="row">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="main" class="<?php puntozero_main_classes(); ?>" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="block block-title">
+			<h1 class="archive_title">
+				<?php echo get_the_archive_title() ?>
+			</h1>
+		</div>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+		<?php if (have_posts()) : ?>
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+		<?php while (have_posts()) : the_post(); ?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+		<?php puntozero_display_post(true); ?>
 
-			// End the loop.
-			endwhile;
+		<?php endwhile; ?>
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'puntozero' ),
-				'next_text'          => __( 'Next page', 'puntozero' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'puntozero' ) . ' </span>',
-			) );
+		<?php puntozero_page_navi(); ?>
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+		<?php else : ?>
 
-		endif;
-		?>
+		<article id="post-not-found" class="block">
+		    <p><?php _e("No items found.", "puntozero"); ?></p>
+		</article>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+		<?php endif; ?>
 
-<?php get_sidebar(); ?>
+	</div>
+
+	<?php get_sidebar("left"); ?>
+	<?php get_sidebar("right"); ?>
+
+</div>
+
 <?php get_footer(); ?>
