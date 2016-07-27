@@ -2,7 +2,8 @@
 
 <div id="content" class="row">
 
-	<div id="main" class="<?php puntozero_main_classes(); ?>" role="main">
+	<div class="container-fluid">
+	<div id="main" class="page <?php puntozero_main_classes(); ?> col-md-offset-1" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -25,6 +26,7 @@
 	<?php get_sidebar("left"); ?>
 	<?php get_sidebar("right"); ?>
 
+</div>
 </div>
 
 <?php get_footer(); ?>

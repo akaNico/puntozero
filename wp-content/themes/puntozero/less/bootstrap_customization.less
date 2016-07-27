@@ -111,7 +111,7 @@
 @line-height-small:         1.5;
 
 @border-radius-base:        0;
-@border-radius-large:       0;
+@border-radius-large:       7px;
 @border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -747,7 +747,7 @@
 //** Padding around the thumbnail image
 @thumbnail-padding:           4px;
 //** Thumbnail background color
-@thumbnail-bg:                @body-bg;
+@thumbnail-bg:                #bdac7e;
 //** Thumbnail border color
 @thumbnail-border:            #ddd;
 //** Thumbnail border radius
@@ -873,17 +873,31 @@
 // Bootswatch
 // -----------------------------------------------------
 
-// Navbar =====================================================================
 
-.navbar {
-
-  &-inverse {
-
-    .badge {
-      background-color: #fff;
-      color: @brand-primary;
+// Grid =====================================================================
+// remove external pagging
+/*
+.container-fluid {
+    padding: 0px;
+}
+@media (max-width: 797px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
     }
-  }
+}
+*/
+
+// Navbar =====================================================================
+.navbar {
+    margin-bottom: 0px;
+
+    &-inverse {
+        .badge {
+          background-color: #fff;
+          color: @brand-primary;
+        }
+    }
 }
 
 // Buttons ====================================================================

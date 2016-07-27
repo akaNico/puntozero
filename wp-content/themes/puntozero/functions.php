@@ -26,6 +26,7 @@ function puntozero_theme_support() {
         )
     );
     add_image_size( 'puntozero_featured', 1140, 1140 * (9 / 21), true);
+    add_image_size( 'puntozero_blog_thumb', 900, 700, true);
     load_theme_textdomain( 'puntozero', get_template_directory() . '/languages' );
 }
 add_action('after_setup_theme','puntozero_theme_support');
@@ -89,6 +90,11 @@ function puntozero_register_sidebars() {
 
 }
 add_action( 'widgets_init', 'puntozero_register_sidebars' );
+
+function register_categories_menu() {
+  register_nav_menu('categories-menu',__( 'Categories Menu' ));
+}
+add_action( 'init', 'register_categories_menu' );
 
 // Menu output mods
 class puntozero_Bootstrap_walker extends Walker_Nav_Menu {
@@ -163,6 +169,27 @@ function puntozero_add_active_class($classes, $item) {
 }
 add_filter('nav_menu_css_class', 'puntozero_add_active_class', 10, 2 );
 
+
+// Return an alternate title, without prefix, for every type used in the get_the_archive_title().
+function filter_get_the_archive_title( $title ) {
+    if( is_category() ) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+};
+add_filter( 'get_the_archive_title', 'filter_get_the_archive_title', 10, 1 );
+
+
+function the_category_unlinked($separator = ' ') {
+    $categories = (array) get_the_category();
+    $thelist = 'test ';
+    foreach($categories as $category) {    // concate
+        $thelist .= $separator . $category->category_nicename;
+        $thelist .= $separator . get_category_parents($category, false, ' ', true);
+    }
+    return $thelist;
+}
+
 // display the main menu bootstrap-style
 // this menu is limited to 2 levels (that's a bootstrap limitation)
 function puntozero_display_main_menu() {
@@ -230,51 +257,65 @@ function puntozero_page_navi() {
 
 function puntozero_display_post($multiple_on_page) { ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class("block"); ?> role="article">
-
+    <?php if ($multiple_on_page) : ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class("block post-item col-md-4 ".the_category_unlinked(' ')); ?> role="article">
+        <div class="post-date img-rounded">
+            <div class="post-day">
+                <?php echo get_the_date('j'); ?>
+            </div>
+            <div class="post-month-year">
+                <?php echo get_the_date('M Y'); ?>
+            </div>
+        </div>
+        <?php if (has_post_thumbnail()) { ?>
+        <div class="featured-image">
+            <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+                <?php $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'puntozero_blog_thumb' ); ?>
+                <img src="<?php echo $thumbnail['0']; ?>" class="img-responsive" alt="<?php the_title_attribute(); ?>" />
+            </a>
+        </div>
+        <?php } ?>
         <header>
-
-            <?php if ($multiple_on_page) : ?>
             <div class="article-header">
                 <h2 class="h1"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
             </div>
-            <?php else: ?>
-            <div class="article-header">
-                <h1><?php the_title(); ?></h1>
-            </div>
-            <?php endif ?>
-
-            <?php if (has_post_thumbnail()) { ?>
-            <div class="featured-image">
-                <?php if ($multiple_on_page) : ?>
-                <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('puntozero_featured'); ?></a>
-                <?php else: ?>
-                <?php the_post_thumbnail('puntozero_featured'); ?>
-                <?php endif ?>
-            </div>
-            <?php } ?>
-
-            <?php puntozero_display_post_meta() ?>
-
         </header>
-
         <section class="post_content">
             <?php
-            if ($multiple_on_page) {
-                the_excerpt();
-            } else {
+                echo substr(get_the_excerpt(), 0, 100);
+            ?>
+            <a href="<?php the_permalink() ?>" class="pull-right text-uppercase" title="<?php the_title_attribute(); ?>">
+                <?php echo __('Read more', 'puntozero') ?>
+            </a>
+        </section>
+    </article>
+    <?php else: ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class("block"); ?> role="article">
+        <header>
+            <?php if (has_post_thumbnail()) { ?>
+                <div class="featured-image">
+                    <?php $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'puntozero_featured' ); ?>
+                    <img src="<?php echo $thumbnail['0']; ?>" class="img-responsive" alt="<?php the_title_attribute(); ?>" />
+                </div>
+            <?php } ?>
+            <div class="article-header">
+                <p class="post-date">
+                    <?php echo get_the_date('j F Y'); ?>
+                </p>
+                <h1><?php the_title(); ?></h1>
+            </div>
+        </header>
+        <section class="post_content">
+            <?php
                 the_content();
                 wp_link_pages();
-            }
             ?>
         </section>
-
         <footer>
             <?php the_tags('<p class="tags">', ' ', '</p>'); ?>
         </footer>
-
     </article>
-
+<?php endif; ?>
 <?php }
 
 function puntozero_main_classes() {

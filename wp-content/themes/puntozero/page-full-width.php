@@ -7,8 +7,8 @@ Template Name: Full Width Page
 <?php get_header(); ?>
 
 <div id="content" class="row">
-
-	<div id="main" class="col-lg-12" role="main">
+	<div class="container-fluid">
+	<div id="main" class="page col-sm-12 col-md-10 col-md-offset-1" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -26,6 +26,7 @@ Template Name: Full Width Page
 
 		<?php endif; ?>
 
+	</div>
 	</div>
 
 </div>
