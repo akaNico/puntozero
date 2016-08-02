@@ -314,6 +314,23 @@ class WPForms_Settings {
 		<div id="wpforms-settings" class="wrap">
 
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+
+			<div class="wpforms-circle-loader">
+				<div class="wpforms-circle-1 wpforms-circle"></div>
+				<div class="wpforms-circle-2 wpforms-circle"></div>
+				<div class="wpforms-circle-3 wpforms-circle"></div>
+				<div class="wpforms-circle-4 wpforms-circle"></div>
+				<div class="wpforms-circle-5 wpforms-circle"></div>
+				<div class="wpforms-circle-6 wpforms-circle"></div>
+				<div class="wpforms-circle-7 wpforms-circle"></div>
+				<div class="wpforms-circle-8 wpforms-circle"></div>
+				<div class="wpforms-circle-9 wpforms-circle"></div>
+				<div class="wpforms-circle-10 wpforms-circle"></div>
+				<div class="wpforms-circle-11 wpforms-circle"></div>
+				<div class="wpforms-circle-12 wpforms-circle"></div>
+			</div>
+
+			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 			
 			<div id="wpforms-tabs" class="wpforms-clear">
 

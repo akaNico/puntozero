@@ -160,6 +160,9 @@ Syed Balkhi
 
 == Changelog ==
 
+= 1.2.4.1 =
+- Fixed: Plugin settings page not correctly showing
+
 = 1.2.4 =
 - Added: Additional logging and error reporting
 - Changed: Footer asset detection priority, for improved capatibility with other services

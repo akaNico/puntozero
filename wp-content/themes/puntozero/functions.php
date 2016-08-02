@@ -27,6 +27,7 @@ function puntozero_theme_support() {
     );
     add_image_size( 'puntozero_featured', 1140, 1140 * (9 / 21), true);
     add_image_size( 'puntozero_blog_thumb', 900, 700, true);
+    add_image_size( 'puntozero_squared', 600, 600, true);
     load_theme_textdomain( 'puntozero', get_template_directory() . '/languages' );
 }
 add_action('after_setup_theme','puntozero_theme_support');
@@ -60,6 +61,64 @@ if ( ! isset( $content_width ) )
 
 // Sidebar and Footer declaration
 function puntozero_register_sidebars() {
+
+    register_sidebar( array(
+    'id'            => 'home_slider',
+    'name'          => __('Home Slider', 'puntozero'),
+    'description' => __('Used on homepage to show slider.', 'puntozero'),
+    'before_widget' => '<div class="homepage-slider">',
+    'after_widget'  => '</div>',
+    'before_title'  => '',
+    'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+    'id'            => 'home_before_three_columns',
+    'name'          => __('Home Before Three Columns', 'puntozero'),
+    'description' => __('Used on homepage to add title and subtitle before the three columns info.', 'puntozero'),
+    'before_widget' => '<div class="col-sm-12 col-md-12 text-center text-uppercase">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+    'id'            => 'home_three_columns',
+    'name'          => __('Home Three Columns', 'puntozero'),
+    'description' => __('Used on homepage to add the three columns info.', 'puntozero'),
+    'before_widget' => '<div class="col-sm-12 col-md-4 home_three_columns_item">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+    'id'            => 'homepage_contacts_title',
+    'name'          => __('Home Contacts Title', 'homepage_contacts_title'),
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+    'id'            => 'homepage_contacts_text',
+    'name'          => __('Home Contacts Text', 'homepage_contacts_text'),
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+    'id'            => 'homepage_contacts_form',
+    'name'          => __('Home Contacts Form', 'homepage_contacts_form'),
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h2>',
+    'after_title'   => '</h2>',
+    ) );
+
     register_sidebar(array(
         'id' => 'sidebar-right',
         'name' => __('Right Sidebar', 'puntozero'),
@@ -254,6 +313,14 @@ function puntozero_page_navi() {
 
     <?php
 }
+
+function puntozero_display_homepage() { ?>
+    <article id="post-<?php the_ID(); ?>" role="article">
+        <section class="post_content homepage_content">
+            <?php the_content(); ?>
+        </section>
+    </article>
+<?php }
 
 function puntozero_display_post($multiple_on_page) { ?>
 

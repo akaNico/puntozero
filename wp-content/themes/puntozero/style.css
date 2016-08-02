@@ -6396,6 +6396,133 @@ a.list-group-item-danger.active:focus {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+/* homepage */
+.home_before_three_columns {
+  background-color: #fff;
+  padding: 20px 0 40px;
+}
+.home_before_three_columns h2 {
+  color: #965251;
+  font-size: 54px;
+}
+.home_before_three_columns .textwidget {
+  color: #000;
+  font-size: 31px;
+}
+.home_three_columns {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+.home_three_columns .home_three_columns_item {
+  text-align: center;
+  font-size: 23px;
+  color: #000;
+}
+.home_three_columns .home_three_columns_item h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.home_three_columns .home_three_columns_item hr {
+  width: 100px;
+  border-bottom: 3px solid #965251;
+}
+.home_three_columns .home_three_columns_item a {
+  margin: 20px;
+  display: block;
+}
+.home_three_columns .home_three_columns_item a img {
+  border-radius: 50%;
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+.home_three_columns .home_three_columns_item .widget_sp_image-description {
+  margin: 20px;
+}
+.homepage_content {
+  background-image: url('images/sfondo-mondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0 0 30px;
+}
+.homepage_content h2 {
+  text-transform: uppercase;
+  font-size: 54px;
+  color: #df7e6b;
+  padding: 40px 0 10px;
+}
+.homepage_content h4 {
+  font-size: 32px;
+  color: #df7e6b;
+  padding: 10px 0;
+}
+.homepage_content p {
+  max-width: 800px;
+  line-height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepage_content p img {
+  margin-right: 10px;
+}
+.homepage .contacts {
+  background-image: url('images/sfondo-contatti.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #80d5f9;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-weight: 31px;
+}
+.homepage .contacts h2 {
+  padding: 30px 0 10px;
+  color: #fff;
+  font-weight: 54px;
+}
+.homepage .homepage_contacts_form {
+  margin-top: 40px;
+}
+.homepage .homepage_contacts_text {
+  text-transform: none;
+  text-align: left;
+  font-size: 21px;
+  color: #fff;
+  line-height: 34px;
+}
+.homepage .homepage_contacts_text h2 {
+  font-size: 35px;
+  font-weight: bold;
+}
+.homepage .homepage_contacts_text p {
+  margin-bottom: 25px;
+}
+.homepage .homepage_contacts_text p img {
+  margin-right: 20px;
+  float: left;
+}
+.homepage .homepage_contacts_text p:first-child img {
+  margin-top: 12px;
+}
+.homepage .homepage_contacts_text .social {
+  margin: 100px 0 0;
+}
+.homepage .homepage_contacts_text .social a img {
+  margin-right: 40px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.homepage .homepage_contacts_text .social a:hover img {
+  opacity: 0.7;
+}
 /* post styling */
 #main > article header a {
   color: inherit;
