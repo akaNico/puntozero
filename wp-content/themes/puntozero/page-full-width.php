@@ -7,12 +7,12 @@ Template Name: Full Width Page
 <?php get_header(); ?>
 
 <div id="content" class="row">
-	<div class="container-fluid">
+	<div class="container-fluid page-full-with">
 	<div id="main" class="page col-sm-12 col-md-10 col-md-offset-1" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<?php puntozero_display_post(false); ?>
+		<?php puntozero_display_page_full_with(); ?>
 
 		<?php comments_template(); ?>
 

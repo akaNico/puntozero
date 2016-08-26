@@ -1,0 +1,570 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress Image Mapper\n"
+"POT-Creation-Date: 2016-03-30 13:50+0100\n"
+"PO-Revision-Date: 2016-03-30 13:50+0100\n"
+"Last-Translator: \n"
+"Language-Team: Shindiri Studio\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_html_e;esc_html_x;"
+"esc_html_n\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../image_mapper_class.php:107
+msgid "Small iMapper pin"
+msgstr ""
+
+#: ../image_mapper_class.php:125
+msgid "Delete pin"
+msgstr ""
+
+#: ../image_mapper_class.php:126
+msgid "Duplicate pin"
+msgstr ""
+
+#: ../image_mapper_class.php:127
+msgid "Select your pin"
+msgstr ""
+
+#: ../image_mapper_class.php:128
+msgid "Default iMapper pins"
+msgstr ""
+
+#: ../image_mapper_class.php:129
+msgid "Import Your own pin"
+msgstr ""
+
+#: ../image_mapper_class.php:130
+msgid "Upload custom pin"
+msgstr ""
+
+#: ../image_mapper_class.php:131
+msgid "Please select pin size"
+msgstr ""
+
+#: ../image_mapper_class.php:132
+msgid "Insert custom pin"
+msgstr ""
+
+#: ../image_mapper_class.php:133
+msgid "Close"
+msgstr ""
+
+#: ../image_mapper_class.php:134
+msgid "Please Close All Pin Tabs to save your work !"
+msgstr ""
+
+#: ../image_mapper_class.php:135
+msgid "Save imapper to view changes !"
+msgstr ""
+
+#: ../image_mapper_class.php:136
+msgid "Preview"
+msgstr ""
+
+#: ../image_mapper_class.php:137
+msgid "Map pin"
+msgstr ""
+
+#: ../image_mapper_class.php:138
+msgid "Sliding pin"
+msgstr ""
+
+#: ../image_mapper_class.php:139
+msgid "Shadow pin"
+msgstr ""
+
+#: ../image_mapper_class.php:140
+msgid "Glowing pin"
+msgstr ""
+
+#: ../image_mapper_class.php:141
+msgid "Pin with icon"
+msgstr ""
+
+#: ../image_mapper_class.php:142
+msgid "Area Pin"
+msgstr ""
+
+#: ../image_mapper_class.php:143
+msgid "Tab pin"
+msgstr ""
+
+#: ../image_mapper_class.php:144 ../pages/image_mapper_edit.php:249
+#: ../pages/image_mapper_edit.php:519
+msgid "Top"
+msgstr ""
+
+#: ../image_mapper_class.php:145 ../pages/image_mapper_edit.php:250
+#: ../pages/image_mapper_edit.php:520
+msgid "Bottom"
+msgstr ""
+
+#: ../image_mapper_class.php:146 ../pages/image_mapper_edit.php:230
+#: ../pages/image_mapper_edit.php:427
+msgid "Change pin"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:80
+msgid "Name your iMapper"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:122
+msgid "Cancel"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:124
+msgid "Enter title here"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:140
+msgid "Map"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:140 ../pages/image_mapper_index.php:75
+msgid "Change"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:143
+msgid "No Image Uploaded"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:144
+msgid "Insert your new image and click on it to add pins"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:145
+msgid "Add Your Image"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:150
+msgid "Remove"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:160
+msgid "Active Pins"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:187
+msgid "Duplicate Pin"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:188
+msgid "Pin"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:188
+msgid "Delete Pin"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:221
+msgid "Choose Pin Tab Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:231
+msgid "Reset"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:236
+msgid "Pin Title"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:243
+msgid "Pin Open Direction"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:245 ../pages/image_mapper_edit.php:260
+#: ../pages/image_mapper_edit.php:262 ../pages/image_mapper_edit.php:290
+#: ../pages/image_mapper_edit.php:292 ../pages/image_mapper_edit.php:494
+#: ../pages/image_mapper_edit.php:507 ../pages/image_mapper_edit.php:786
+msgid "Default"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:247 ../pages/image_mapper_edit.php:517
+msgid "Left"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:248 ../pages/image_mapper_edit.php:518
+msgid "Right"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:257
+msgid "Pin click action"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:263 ../pages/image_mapper_edit.php:293
+#: ../pages/image_mapper_edit.php:495 ../pages/image_mapper_edit.php:508
+msgid "None"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:264 ../pages/image_mapper_edit.php:496
+msgid "Link"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:265 ../pages/image_mapper_edit.php:294
+#: ../pages/image_mapper_edit.php:497 ../pages/image_mapper_edit.php:509
+msgid "Content"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:266 ../pages/image_mapper_edit.php:498
+msgid "Content below"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:267 ../pages/image_mapper_edit.php:499
+msgid "Lightbox image"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:268 ../pages/image_mapper_edit.php:500
+msgid "Lightbox iframe"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:276
+msgid "Pin Content"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:282
+msgid "Pin link"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:288
+msgid "Pin hover action"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:301
+msgid "Pin category"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:312
+msgid "Item Pin Image"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:347
+msgid "Border width"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:354
+msgid "Border radius"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:359
+msgid "Border color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:365
+msgid "Area pin width"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:370
+msgid "Area pin height"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:386
+msgid "Pin Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:440
+msgid "Item Title"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:482
+msgid "Item category"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:487
+msgid "Item link"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:492
+msgid "Item click action"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:505
+msgid "Item hover action"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:515
+msgid "Item Open Position"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:546
+msgid "Item Content"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:651
+msgid "Publish iMapper"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:666
+msgid "Basic Pin Settings"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:672
+msgid "Pin Icon"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:684
+msgid "Change Pin"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:703
+msgid "Tab Pin Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:711
+msgid "Background Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:717
+msgid "Border Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:730
+msgid "Content Width"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:739
+msgid "Content Height"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:748
+msgid "Content Border Radius"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:757
+msgid "Item Open Style"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:762
+msgid "Click"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:763
+msgid "Hover"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:777
+msgid "Font Settings"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:783
+msgid "Font"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:801
+msgid "Title Font Size"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:815
+msgid "Text Font Size"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:830
+msgid "Font Color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:846
+msgid "Image Settings"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:856
+msgid "Image Overlay"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:858 ../pages/image_mapper_edit.php:871
+#: ../pages/image_mapper_edit.php:881 ../pages/image_mapper_edit.php:892
+#: ../pages/image_mapper_edit.php:960 ../pages/image_mapper_edit.php:1003
+msgid "On"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:859 ../pages/image_mapper_edit.php:872
+#: ../pages/image_mapper_edit.php:882 ../pages/image_mapper_edit.php:893
+#: ../pages/image_mapper_edit.php:961 ../pages/image_mapper_edit.php:1004
+msgid "Off"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:870
+msgid "Blur effect"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:880
+msgid "Pin Slide Effect"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:891
+msgid "Lightbox Gallery"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:908
+msgid "Responsive Settings"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:914
+msgid "Design Style"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:919
+msgid "Fluid"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:920
+msgid "Responsive"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:929
+msgid "Pin Scale Coefficient"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:951
+msgid "Category Settings"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:958
+msgid "Enable categories"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:969
+msgid "Link color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:976
+msgid "Active link color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:985
+msgid "Font color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:992
+msgid "Active font color"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:1001
+msgid "Enable All Categories Link"
+msgstr ""
+
+#: ../pages/image_mapper_edit.php:1014
+msgid "All Categories text"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:9
+msgid "WordPress Image Mapper"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:10 ../pages/image_mapper_index.php:74
+msgid "Add New"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:20 ../pages/image_mapper_index.php:29
+msgid "ID"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:21
+msgid "Add"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:22 ../pages/image_mapper_index.php:31
+msgid "Shortcode"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:23 ../pages/image_mapper_index.php:32
+msgid "Actions"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:30
+msgid "Name"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:60
+msgid "Edit this item"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:60
+msgid "Edit"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:61
+msgid "Delete this item"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:61
+msgid "Delete"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:72
+msgid "Step by step instructions:"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:74
+#, php-format
+msgid "Click the %s button"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:75
+#, php-format
+msgid "Name your mapper and click %s button to insert your image"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:76
+#, php-format
+msgid "Click anywhere on the image to %s"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:76
+msgid "add a pin"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:77
+#, php-format
+msgid "Added pins are shown %1$s and content of the pins can be edited %2$s"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:77
+msgid "directly on the image"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:77
+msgid "below the image"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:78
+#, php-format
+msgid "%s are located on the right sidebar"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:78
+msgid "Settings for pins"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:79
+#, php-format
+msgid "Save and %s"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:79
+msgid "publish"
+msgstr ""
+
+#: ../pages/image_mapper_index.php:80
+msgid "Enjoy"
+msgstr ""
+
+#: ../pages/image_mapper_frontend.php:17
+msgid "Error, please add at least one pin in iMapper settings"
+msgstr ""
+
+#: ../pages/my-preview.php:9
+msgid "Preview Imapper"
+msgstr ""
+
+#: ../pages/my-preview.php:19
+msgid ""
+"This is preview of last saved Image Mapper, please save changes to view it."
+msgstr ""

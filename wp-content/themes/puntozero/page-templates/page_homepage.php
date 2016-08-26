@@ -9,12 +9,6 @@
 
  ?>
 
- <?php
- /*
- Template Name: Full Width Page
- */
- ?>
-
  <?php get_header(); ?>
 
  <div id="content" class="row">

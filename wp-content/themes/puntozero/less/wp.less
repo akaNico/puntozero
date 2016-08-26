@@ -44,7 +44,6 @@
     padding-bottom: 20px;
     .home_three_columns_item {
         text-align: center;
-        font-size: 23px;
         color: #000;
         h2 {
             font-size: 30px;
@@ -62,6 +61,7 @@
             img {
                 .img-circle;
                 .img-responsive;
+                margin: 0 auto;
             }
         }
         .widget_sp_image-description {
@@ -119,11 +119,9 @@
     .homepage_contacts_text {
         text-transform: none;
         text-align: left;
-        font-size: 21px;
         color: #fff;
-        line-height: 34px;
         h2 {
-            font-size: 35px;
+            font-size: 30px;
             font-weight: bold;
         }
         p {
@@ -131,11 +129,12 @@
             img {
                 margin-right: 20px;
                 float: left;
+                margin-top: -10px;
             }
         }
         p:first-child {
             img {
-                margin-top: 12px;
+                margin-top: 0px;
             }
         }
         .social {
@@ -156,6 +155,113 @@
         }
     }
 }
+/* style development */
+.style-development {
+    background-color: #fff3dd;
+    position: relative;
+    img.style-development-top-left {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 1;
+    }
+    img.style-development-top-right {
+        position: absolute;
+        top: 80px;
+        right: 50px;
+        z-index: 1;
+    }
+    img.style-development-bottom-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+    img.style-development-bottom-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+    .style-development-content {
+        border: 4px dashed #5e5438;
+        margin: 20px 0;
+        .article-header {
+            .post-date {
+                display: none;
+            }
+            h1 {
+                font-size: 44px;
+                color: #544c35;
+                font-weight: normal;
+                background-color: transparent;
+                padding: 50px 0 21px;
+                z-index: 2;
+                position: relative;
+            }
+        }
+        .post_content {
+            position: relative;
+            z-index: 2;
+            color: #544c35;
+            margin: 0 10%;
+            font-size: 25px;
+            h2 {
+                color: #c46957;
+                font-size: 35px;
+                margin-bottom: 30px;
+            }
+            strong {
+                color: #c46957;
+            }
+            img {
+                margin: 60px auto;
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+}
+/* product categories */
+.main_product_categories_menu_class {
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: right;
+    a {
+        color: #fff;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            border-left: 1px solid #fff;
+            padding: 0 10px 0 15px;
+        }
+        li:first-child {
+            border-left: 0 solid transparent;
+        }
+    }
+}
+.product-item .post_content a {
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 15px 0;
+    background-color: #965251;
+}
+.post .product {
+    background-color: #f5f1f1;
+    .article-header {
+        background-color: transparent;
+        h1 {
+            color: #000000;
+            background-color: transparent;
+            font-size: 40px;
+        }
+    }
+}
 /* post styling */
 #main > article {
     header {
@@ -168,8 +274,6 @@
     section {
         .clearfix();
         img {
-            .img-responsive();
-            .img-thumbnail();
             &.alignleft {
                 .pull-left();
                 margin-right: 10px;
@@ -190,8 +294,6 @@
     }
     section.post_content {
         background-color: #f5f1f1;
-        font-size: 23px;
-        line-height: 36px;
         color: #000;
         padding: 40px;
         h3 {
@@ -520,15 +622,31 @@ body {
     }
 }
 /* a style used for page headers */
-.page {
-    .article-header {
-        h1 {
-            margin: 0;
-            padding: @line-height-computed 0;
-            background-color: #c46957;
-            color: #fff;
-            text-transform: uppercase;
+.page-full-with {
+    background-color: #fff;
+    h1 {
+        margin: 0;
+        padding: @line-height-computed 0;
+        color: #c46957;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    #main > article {
+        section.post_content {
             text-align: center;
+            background-color: transparent;
+            color: #000;
+            padding: 40px;
+            h3 {
+                color: #c46957;
+            }
+            img {
+                margin: 20px auto;
+            }
+            hr {
+                border-top: 3px solid #c46957;
+                width: 100px;
+            }
         }
     }
 }
@@ -575,11 +693,12 @@ ul.dashed > li:before {
     margin-right: 5px;
 }
 .categories_menu_class {
-    height: 180px;
+    height: 90px;
     margin-top: 40px;
     ul {
         position: relative;
         padding: 0;
+        text-align: center;
         li {
             list-style: none;
             display: inline-block;
@@ -616,14 +735,11 @@ ul.dashed > li:before {
                 background-color: #965251;
             }
         }
-        li.color1:hover {
-            border-bottom: 4px solid #bdac7e;
-        }
-        li.color2:hover {
-            border-bottom: 4px solid #df7e6b;
-        }
-        li.color3:hover {
-            border-bottom: 4px solid #965251;
+        li.color4 {
+            background-color: #8d7644;
+            li {
+                background-color: #8d7644;
+            }
         }
         li:hover {
             a {
@@ -659,6 +775,108 @@ ul.dashed > li:before {
                 a:hover {
                     color: #fff;
                 }
+            }
+        }
+    }
+}
+.categories_menu_class.product-categories-menu {
+    ul {
+        li {
+            width: 210px;
+        }
+    }
+}
+/*
+GALLERY CAROUSEL
+*/
+.wc-gallery {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 840px) {
+    .wc-gallery {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/*
+HOMEPAGE SLIDER
+*/
+#main div#n2-ss-1 .n2-ss-layer .n2-font-10004-paragraph a,
+#main div#n2-ss-1 .n2-ss-layer .n2-font-10004-paragraph a:hover {
+    color: #fff !important;
+}
+#main div#n2-ss-1 .nextend-thumbnail-default table {
+    width: 100%;
+    table-layout: auto;
+}
+#main div#n2-ss-1 .nextend-thumbnail-default table td {
+    width: auto;
+}
+#main div#n2-ss-1 .nextend-thumbnail-default .nextend-thumbnail-scroller td > div {
+    width: 100% !important;
+    height: 100px !important;
+    margin: 0;
+}
+#main div#n2-ss-1 .n2-ss-thumb-image {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+}
+#main div#n2-ss-1 .nextend-thumbnail-default .nextend-thumbnail-scroller {
+    height: 100px !important;
+}
+#main div#n2-ss-1 .nextend-thumbnail-horizontal .n2-ss-caption {
+    top: 0;
+    width: 100%;
+    display: table;
+    height: 100%;
+    background: transparent;
+}
+#main div#n2-ss-1 .nextend-thumbnail-default .n2-caption-overlay div {
+    font-family: "Lato", Calibri, Candara, Arial, sans-serif;
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media (min-width: 840px) {
+    #main div#n2-ss-1 .nextend-thumbnail-default .n2-caption-overlay div {
+        font-size: 30px;
+    }
+}
+/*
+TEAM
+*/
+.team .imapper-content-wrapper {
+    height: auto !important;
+    font-family: "Lato", Calibri, Candara, Arial, sans-serif;
+    .imapper-content {
+        height: auto !important;
+        bottom: auto !important;
+        .imapper-content-text {
+            height: auto !important;
+            bottom: auto !important;
+            h3 {
+                color: #c46957;
+                font-size: 29px;
+                margin: 10px 0 5px;
+            }
+            h4 {
+                font-size: 22px;
+                margin: 0 0 25px;
+            }
+            table {
+                margin-bottom: 20px;
+            }
+            tr:first-child {
+                border-bottom: 20px solid white;
+            }
+            td {
+                vertical-align: middle;
             }
         }
     }

@@ -15,6 +15,7 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<?php puntozero_display_post(false); ?>
+						<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 						<?php comments_template('',true); ?>
 						<?php if (get_next_post() || get_previous_post()) { ?>
 						<nav class="block">
