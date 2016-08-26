@@ -10,29 +10,34 @@
     			<div class="clearfix">&nbsp;</div>
     			<div class="container-fluid">
                     <div class="row <?php echo the_category_unlinked(' '); ?>">
-						<div class="block block-title">
-							<h1 class="archive_title">
-								<?php echo get_the_archive_title() ?>
-							</h1>
-						</div>
+                        <div class="col-sx-12 col-md-8">
+                            <div class="row">
+        						<div class="block block-title">
+        							<h1 class="archive_title">
+        								<?php echo get_the_archive_title() ?>
+        							</h1>
+        						</div>
 
-						<?php if (have_posts()) : ?>
+        						<?php if (have_posts()) : ?>
 
-						<?php while (have_posts()) : the_post(); ?>
+        						<?php while (have_posts()) : the_post(); ?>
 
-						<?php puntozero_display_post(true); ?>
+        						<?php puntozero_display_post(true); ?>
 
-						<?php endwhile; ?>
+        						<?php endwhile; ?>
 
-						<?php puntozero_page_navi(); ?>
+        						<?php puntozero_page_navi(); ?>
 
-						<?php else : ?>
+        						<?php else : ?>
 
-						<article id="post-not-found" class="block">
-						    <p><?php _e("No items found.", "puntozero"); ?></p>
-						</article>
+        						<article id="post-not-found" class="block">
+        						    <p><?php _e("No items found.", "puntozero"); ?></p>
+        						</article>
 
-						<?php endif; ?>
+        						<?php endif; ?>
+                            </div>
+                        </div>
+                        <?php get_sidebar("right"); ?>
 					</div>
                 </div>
             </div>

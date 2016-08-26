@@ -395,7 +395,7 @@ function puntozero_display_page_full_with() { ?>
 function puntozero_display_post($multiple_on_page) { ?>
 
     <?php if ($multiple_on_page) : ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class("block post-item col-md-4 ".the_category_unlinked(' ')); ?> role="article">
+    <article id="post-<?php the_ID(); ?>" <?php post_class("block post-item col-sx-12 col-md-6 ".the_category_unlinked(' ')); ?> role="article">
         <div class="post-date img-rounded">
             <div class="post-day">
                 <?php echo get_the_date('j'); ?>

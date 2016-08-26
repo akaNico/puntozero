@@ -10,23 +10,28 @@
     			<div class="clearfix">&nbsp;</div>
     			<div class="container-fluid">
                     <div class="row">
-            			<?php if (have_posts()) : ?>
+                        <div class="col-sx-12 col-md-8">
+                            <div class="row">
+                    			<?php if (have_posts()) : ?>
 
-            			<?php while (have_posts()) : the_post(); ?>
+                    			<?php while (have_posts()) : the_post(); ?>
 
-            			<?php puntozero_display_post(true); ?>
+                    			<?php puntozero_display_post(true); ?>
 
-            			<?php endwhile; ?>
+                    			<?php endwhile; ?>
 
-            			<?php puntozero_page_navi(); ?>
+                    			<?php puntozero_page_navi(); ?>
 
-            			<?php else : ?>
+                    			<?php else : ?>
 
-            			<article id="post-not-found" class="block">
-            			    <p><?php _e("No posts found.", "puntozero"); ?></p>
-            			</article>
+                    			<article id="post-not-found" class="block">
+                    			    <p><?php _e("No posts found.", "puntozero"); ?></p>
+                    			</article>
 
-            			<?php endif; ?>
+                    			<?php endif; ?>
+                            </div>
+                        </div>
+                        <?php get_sidebar("right"); ?>
                     </div>
                 </div>
             </div>
