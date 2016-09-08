@@ -4,13 +4,14 @@
     <div class="blog-container">
         <div class="container-fluid">
             <div id="main" class="col-sm-12 col-md-10 col-md-offset-1" role="main">
-    			<h1 class="text-uppercase text-center">Puntozero Style</h1>
+                <?php wp_nav_menu( array( 'theme_location' => 'blog-main-menu', 'container_class' => 'main_blog_menu_class'  ) ); ?>
+
     			<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'container_class' => 'categories_menu_class'  ) ); ?>
 
     			<div class="clearfix">&nbsp;</div>
     			<div class="container-fluid">
                     <div class="row <?php echo the_category_unlinked(' '); ?>">
-                        <div class="col-sx-12 col-md-8">
+                        <div class="col-sx-12 col-md-9">
                             <div class="row">
         						<div class="block block-title">
         							<h1 class="archive_title">

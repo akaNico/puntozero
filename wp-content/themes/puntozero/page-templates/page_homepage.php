@@ -17,6 +17,7 @@
         <div class="homepage">
 
         <?php get_sidebar("homepage_slider"); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'home-categories-menu', 'container_class' => 'home_categories_menu_class'  ) ); ?>
         <?php get_sidebar("home_before_three_columns"); ?>
         <?php get_sidebar("homepage_three_columns"); ?>
  		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

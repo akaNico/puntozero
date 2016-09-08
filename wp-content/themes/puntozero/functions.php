@@ -159,10 +159,12 @@ function puntozero_register_sidebars() {
 add_action( 'widgets_init', 'puntozero_register_sidebars' );
 
 function register_theme_menus() {
+  register_nav_menu('home-categories-menu',__( 'Home Categories Menu' ));
   register_nav_menu('categories-menu',__( 'Categories Menu' ));
   register_nav_menu('product-categories-man-menu',__( 'Product categories Man' ));
   register_nav_menu('product-categories-woman-menu',__( 'Product categories Woman' ));
   register_nav_menu('product-main-categories-menu',__( 'Main product categories' ));
+  register_nav_menu('blog-main-menu',__( 'Blog Main Menu' ));
 }
 add_action( 'init', 'register_theme_menus' );
 
@@ -392,6 +394,21 @@ function puntozero_display_page_full_with() { ?>
     </article>
 <?php }
 
+function puntozero_display_page_about_us() { ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class("block"); ?> role="article">
+        <section class="post_content">
+            <?php
+                the_content();
+                wp_link_pages();
+            ?>
+        </section>
+        <footer>
+            <?php the_tags('<p class="tags">', ' ', '</p>'); ?>
+        </footer>
+    </article>
+<?php }
+
+
 function puntozero_display_post($multiple_on_page) { ?>
 
     <?php if ($multiple_on_page) : ?>
@@ -422,7 +439,7 @@ function puntozero_display_post($multiple_on_page) { ?>
                 echo substr(get_the_excerpt(), 0, 100);
             ?>
             <a href="<?php the_permalink() ?>" class="pull-right text-uppercase" title="<?php the_title_attribute(); ?>">
-                <?php echo __('Read more', 'puntozero') ?>
+                <?php echo pll__('Read more', 'puntozero') ?>
             </a>
         </section>
     </article>
@@ -483,7 +500,7 @@ function puntozero_display_product($multiple_on_page) { ?>
         <?php } ?>
         <section class="post_content">
             <a href="<?php the_permalink() ?>" class="text-centet text-uppercase" title="<?php the_title_attribute(); ?>">
-                <?php echo __('view more', 'puntozero') ?>
+                <?php echo pll__('view more') ?>
             </a>
         </section>
     </article>

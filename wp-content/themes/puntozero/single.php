@@ -5,7 +5,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12 col-md-10 col-md-offset-1">
-					<h1 class="text-uppercase text-center">Puntozero Style</h1>
+					<?php wp_nav_menu( array( 'theme_location' => 'blog-main-menu', 'container_class' => 'main_blog_menu_class'  ) ); ?>
 					<?php wp_nav_menu( array( 'theme_location' => 'categories-menu', 'container_class' => 'categories_menu_class'  ) ); ?>
 					<div class="clearfix">&nbsp;</div>
 				</div>
