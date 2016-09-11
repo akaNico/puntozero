@@ -7361,14 +7361,16 @@ a.tagcloud a:focus {
 }
 .widget_a2a_follow_widget {
   border-bottom: 1px solid #e6e6e6;
+  height: 40px;
 }
 .widget_a2a_follow_widget .widgettitle {
   float: left;
   margin-left: 0px;
 }
 .widget_a2a_follow_widget .addtoany_list {
-  line-height: 41px;
+  line-height: 21px;
   padding: 10px 0 10px 20px;
+  float: left;
 }
 .rpwe_widget .widgettitle {
   padding-bottom: 10px;
