@@ -258,6 +258,82 @@
     }
 }
 /* product categories */
+.section-product-category-menu {
+    .navbar {
+        min-height: auto;
+    }
+    .navbar-toggle{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .navbar-nav > li > a {
+      padding-top:    10px;
+      padding-bottom: 10px;
+    }
+    .dropdown-menu {
+        padding: 0px 0px;
+    }
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus
+    {
+        background-color: transparent;
+    }
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+        background-color: rgba(0,0,0,0.1);
+    }
+    .navbar-default {
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        background-color: inherit;
+    }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: transparent;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: transparent;
+    }
+    .navbar-collapse {
+        box-shadow: none;
+    }
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+    {
+        background-color: transparent;
+    }
+    li.color1 {
+        background-color: #bdac7e;
+        li {
+            background-color: #bdac7e;
+        }
+    }
+    li.color2 {
+        background-color: #df7e6b;
+        li {
+            background-color: #df7e6b;
+        }
+    }
+    li.color3 {
+        background-color: #965251;
+        li {
+            background-color: #965251;
+        }
+    }
+    li.color4 {
+        background-color: #8d7644;
+        li {
+            background-color: #8d7644;
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .section-product-category-menu {
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            background-color: rgba(0,0,0,0.1);
+        }
+    }
+}
+
 .main_product_categories_menu_class {
     font-size: 25px;
     text-transform: uppercase;
